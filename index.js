@@ -25,6 +25,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 
+// Default route printing hello
+app.get("/", (req, res) => {
+  res.json("hello");
+});
+
 app.use(newsRouter);
 
 app.use(eventRoute);
